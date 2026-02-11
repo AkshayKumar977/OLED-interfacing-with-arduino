@@ -11,9 +11,15 @@ void setup() {
     Serial.begin(9600);
     if (!display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR)) {
         Serial.println("OLED not found");
-        while (true);
+       while (true);
     }
-
+      display.clearDisplay();
+      display.setTextSize(1);
+      display.setTextColor(SSD1306_WHITE);
+      display.setCursor(0,0);
+      display.println("Hello , OLED!");
+      display.println("Hello World!");
+    display.display();
 }
 
 void loop() {
